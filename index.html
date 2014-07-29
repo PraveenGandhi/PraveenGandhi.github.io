@@ -15,7 +15,7 @@
     </div>
       <div ng-show="auth.user">
     <ul ng-repeat="message in messages" class="list-unstyled">
-      <li><img src="{{message.from.picture}}" width="30" height="30"/><b>{{message.from.displayName}}</b> says:   {{message.content}}</li>
+      <li><img ng-src="{{message.from.thirdPartyUserData.picture}}" width="30" height="30"/><b>{{message.from.displayName}}</b> says:   {{message.content}}</li>
     </ul>
     <form ng-submit="addMessage()" class="form-inline" role="form">
       <div class="form-group">
