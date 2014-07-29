@@ -9,13 +9,13 @@
   <div ng-controller="ChatCtrl">
     <div id="login">
       <span ng-show="auth.user">
-        {{auth.user}} | <a href="#" ng-click="auth.$logout()">Logout</a>
+        Hello {{auth.user.displayName}}...! | <a href="#" ng-click="auth.$logout()">Logout</a>
       </span>
       <a href="#" ng-hide="auth.user" ng-click="auth.$login('google')">Login</a>
     </div>
       <div ng-show="auth.user">
     <ul ng-repeat="message in messages">
-      <li>: </li>
+      <li><b>{{mesage.from.displayName}}</b> says  {{mesage.content}}</li>
     </ul>
     <form ng-submit="addMessage()">
       <input type="text" ng-model="message"/>
