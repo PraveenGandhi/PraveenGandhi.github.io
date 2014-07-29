@@ -15,7 +15,7 @@
     </div>
       <div ng-show="auth.user">
     <ul ng-repeat="message in messages" class="list-unstyled">
-      <li><b>{{message.from.displayName}}</b> says  {{message.content}}</li>
+      <li><b>{{message.from.displayName}}</b> says:   {{message.content}}</li>
     </ul>
     <form ng-submit="addMessage()" class="form-inline" role="form">
       <div class="form-group">
