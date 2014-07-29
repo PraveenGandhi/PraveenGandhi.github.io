@@ -1,5 +1,7 @@
 <html ng-app="myChatRoom">
-  <head>
+  <head
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.min.js"></script>
     <script src="https://cdn.firebase.com/js/client/1.0.18/firebase.js"></script>
     <script src="https://cdn.firebase.com/js/simple-login/1.6.2/firebase-simple-login.js"></script>
@@ -14,7 +16,7 @@
       <a href="#" ng-hide="auth.user" ng-click="auth.$login('google')">Login</a>
     </div>
       <div ng-show="auth.user">
-    <ul ng-repeat="message in messages">
+    <ul ng-repeat="message in messages" class="list-unstyled">
       <li><b>{{message.from.displayName}}</b> says  {{message.content}}</li>
     </ul>
     <form ng-submit="addMessage()">
