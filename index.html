@@ -9,12 +9,11 @@
   <div ng-controller="ChatCtrl">
     <div id="login">
       <span ng-show="auth.user">
-         | <a href="#" ng-click="auth.$logout()">Logout</a>
+        {{auth.user}} | <a href="#" ng-click="auth.$logout()">Logout</a>
       </span>
       <a href="#" ng-hide="auth.user" ng-click="auth.$login('google')">Login</a>
     </div>
-  </div>
-  <div ng-show="auth.user">
+      <div ng-show="auth.user">
     <ul ng-repeat="message in messages">
       <li>: </li>
     </ul>
@@ -23,6 +22,8 @@
       <input type="submit" value="Send Message"/>
     </form>
     </div>
+  </div>
+
   </body>
   <script type="text/javascript">
   	var app = angular.module("myChatRoom", ["firebase"]);
