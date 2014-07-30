@@ -45,7 +45,7 @@
 	  function($scope, chatService, $firebaseSimpleLogin) {
 	  	var ref = new Firebase("https://welfare.firebaseio.com/");
 	    $scope.auth = $firebaseSimpleLogin(ref);
-	    $scope.messages = chatService;
+	    $scope.messages = chatService.limit(6);
 	    $scope.addMessage = function() {
 	      $scope.messages.$add({from: $scope.auth.user, content: $scope.message});
 	      $scope.message = "";
