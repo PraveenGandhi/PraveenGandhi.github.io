@@ -14,9 +14,9 @@
       <a href="#" ng-hide="auth.user" ng-click="auth.$login('google')">Login</a>
     </div>
       <div ng-show="auth.user">
-    <div class="bg-info" ng-repeat="message in messages">
+    <p class="bg-info" ng-repeat="message in messages">
       <img ng-src="{{message.from.thirdPartyUserData.picture}}" width="30" height="30"/><b>{{message.from.displayName}}</b> says:   {{message.content}}
-    </div>
+    </p>
     <br/>
     <form ng-submit="addMessage()" class="form-inline" role="form">
       <div class="form-group">
