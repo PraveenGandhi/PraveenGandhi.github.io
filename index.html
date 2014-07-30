@@ -38,14 +38,14 @@
 
 	app.factory("ChatService", ["$firebase", function($firebase) {
 	  var ref = new Firebase("https://welfare.firebaseio.com/chat");
-	  return $firebase(ref);
+	  return $firebase(ref.limit(10));
 	}]);
 
 	app.controller("ChatCtrl", ["$scope", "ChatService", "$firebaseSimpleLogin",
 	  function($scope, chatService, $firebaseSimpleLogin) {
 	  	var ref = new Firebase("https://welfare.firebaseio.com/");
 	    $scope.auth = $firebaseSimpleLogin(ref);
-	    $scope.messages = chatService.limit(6);
+	    $scope.messages = chatService;
 	    $scope.addMessage = function() {
 	      $scope.messages.$add({from: $scope.auth.user, content: $scope.message});
 	      $scope.message = "";
