@@ -12,9 +12,8 @@
         <img ng-src="{{auth.user.thirdPartyUserData.picture}}" width="40" height="40"/>
         Hello {{auth.user.displayName}}...! | <a href="#" ng-click="auth.$logout()" class="btn btn-default">Logout</a>
       </span>
-      <button type="submit" class="btn btn-info btn-lg btn-block" 
-      style="color: #0088CC;"ng-hide="auth.user" ng-click="auth.$login('google')">
-	<span class="glyphicon glyphicon-envelope"></span> Log in with Gmail</button>
+      <a class="btn btn-info btn-lg btn-block" ng-hide="auth.user" ng-click="auth.$login('google')">
+	<span class="glyphicon glyphicon-envelope"></span> Log in with Gmail</a>
     </div>
       <div ng-show="auth.user">
     <p class="bg-info" ng-repeat="message in messages">
