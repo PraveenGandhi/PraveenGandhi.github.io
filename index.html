@@ -21,29 +21,28 @@
       <img ng-src="{{message.from.thirdPartyUserData.picture}}" width="30" height="30"/><b>{{message.from.displayName}}</b> says:   {{message.content}}
     </p>
     <br/>
-    <form ng-submit="addMessage()" class="form-inline" role="form">
+    <form ng-submit="addMessage()">
       <div class="form-group">
     	<label class="sr-only" for="message">Write your message</label>
-      	<textarea rows=5 ng-model="message" id="message" class="form-control" placeholder="Write your message"></textarea>
+      	<textarea rows=5 ng-model="message" id="message" class="form-control input-block" placeholder="Write your message"></textarea>
       </div>
-      <input type="submit" value="Send Message" class="btn btn-primary"/>
+      <button type="submit" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-send"></span> Send</button>
     </form>
     </div>
   </div>
 </div>
-  
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.min.js"></script>
-    <script src="https://cdn.firebase.com/js/client/1.0.18/firebase.js"></script>
-    <script src="https://cdn.firebase.com/js/simple-login/1.6.2/firebase-simple-login.js"></script>
-    <script src="https://cdn.firebase.com/libs/angularfire/0.7.1/angularfire.min.js"></script>
-  <script type="text/javascript">
-  	var app = angular.module("myChatRoom", ["firebase"]);
-
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.min.js"></script>
+<script src="https://cdn.firebase.com/js/client/1.0.18/firebase.js"></script>
+<script src="https://cdn.firebase.com/js/simple-login/1.6.2/firebase-simple-login.js"></script>
+<script src="https://cdn.firebase.com/libs/angularfire/0.7.1/angularfire.min.js"></script>
+<script type="text/javascript">
+	var app = angular.module("myChatRoom", ["firebase"]);
+	
 	app.factory("ChatService", ["$firebase", function($firebase) {
 	  var ref = new Firebase("https://welfare.firebaseio.com/chat");
 	  return $firebase(ref.limit(10));
 	}]);
-
+	
 	app.controller("ChatCtrl", ["$scope", "ChatService", "$firebaseSimpleLogin",
 	  function($scope, chatService, $firebaseSimpleLogin) {
 	  	var ref = new Firebase("https://welfare.firebaseio.com/");
@@ -55,7 +54,6 @@
 	    };
 	  }
 	]);
-  </script>
-  </body>
-</html>
+</script>
+</body>
 </html>
