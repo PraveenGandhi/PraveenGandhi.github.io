@@ -10,7 +10,8 @@
     <div id="login">
       <span ng-show="auth.user">
         <img ng-src="{{auth.user.thirdPartyUserData.picture}}" width="40" height="40"/>
-        Hello {{auth.user.displayName}}...! | <a href="#" ng-click="auth.$logout()" class="btn btn-default">Logout</a>
+        Hello {{auth.user.displayName}}...! | <a href="#" ng-click="auth.$logout()" class="btn btn-default">
+        <span class="glyphicon glyphicon-log-out"></span> Logout</a>
       </span>
       <a class="btn btn-info btn-lg btn-block" ng-hide="auth.user" ng-click="auth.$login('google')">
 	<span class="glyphicon glyphicon-envelope"></span> Log in with Gmail</a>
