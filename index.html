@@ -9,7 +9,8 @@
   <div ng-controller="ChatCtrl">
     <div id="login">
       <span ng-show="auth.user">
-        Hello {{auth.user.displayName}}...! | <a href="#" ng-click="auth.$logout()">Logout</a>
+        <img ng-src="{{auth.user.thirdPartyUserData.picture}}" width="40" height="40"/>
+        Hello {{auth.user.displayName}}...! | <a href="#" ng-click="auth.$logout()" class="btn btn-default">Logout</a>
       </span>
       <a href="#" ng-hide="auth.user" ng-click="auth.$login('google')">Login</a>
     </div>
