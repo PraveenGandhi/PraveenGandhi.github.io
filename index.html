@@ -17,7 +17,7 @@
 	<span class="glyphicon glyphicon-envelope"></span> Log in with Gmail</a>
     </div>
       <div ng-show="auth.user">
-    <p class="bg-info velocity-transition-bounceRightIn" data-velocity-opts="{ stagger: 350 }" ng-repeat="message in messages">
+    <p class="bg-info velocity-opposites-transition-bounceRightIn" data-velocity-opts="{ stagger: 350 }" ng-repeat="message in messages">
       <img ng-src="{{message.from.thirdPartyUserData.picture}}" width="30" height="30"/><b>{{message.from.displayName}}</b> says:   {{message.content}}
     </p>
     <br/>
