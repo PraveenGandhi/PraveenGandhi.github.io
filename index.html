@@ -17,7 +17,7 @@
 	<span class="glyphicon glyphicon-envelope"></span> Log in with Gmail</a>
     </div>
       <div ng-show="auth.user">
-    <p class="bg-info" ng-repeat="message in messages">
+    <p class="bg-info velocity-transition-bounceRightIn" data-velocity-opts="{ stagger: 350 }" ng-repeat="message in messages">
       <img ng-src="{{message.from.thirdPartyUserData.picture}}" width="30" height="30"/><b>{{message.from.displayName}}</b> says:   {{message.content}}
     </p>
     <br/>
@@ -31,12 +31,19 @@
     </div>
   </div>
 </div>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular-animate.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/velocity/0.7.0/jquery.velocity.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/velocity/0.7.0/velocity.ui.min.js"></script>
+<script src="https://raw.githubusercontent.com/cgwyllie/angular-velocity/master/angular-velocity.min.js"></script>
+
 <script src="https://cdn.firebase.com/js/client/1.0.18/firebase.js"></script>
 <script src="https://cdn.firebase.com/js/simple-login/1.6.2/firebase-simple-login.js"></script>
 <script src="https://cdn.firebase.com/libs/angularfire/0.7.1/angularfire.min.js"></script>
+
 <script type="text/javascript">
-	var app = angular.module("myChatRoom", ["firebase"]);
+	var app = angular.module("myChatRoom", ["firebase",'angular-velocity']);
 	
 	app.factory("ChatService", ["$firebase", function($firebase) {
 	  var ref = new Firebase("https://welfare.firebaseio.com/chat");
