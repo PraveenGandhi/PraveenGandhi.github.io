@@ -1,66 +1,122 @@
-<html ng-app="myChatRoom">
+<html>
   <head>
     <title>Chat</title>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.1/css/materialize.css" rel="stylesheet">
     <link rel="shortcut icon" href="img/stvd.png">
   </head>
   <body>
-  <div class="container">
-  <div ng-controller="ChatCtrl">
-    <div id="login">
-      <span ng-show="auth.user">
-        <img ng-src="{{auth.user.thirdPartyUserData.picture}}" width="40" height="40"/>
-        Hello {{auth.user.displayName}}...! | <a href="#" ng-click="auth.$logout()" class="btn btn-default">
-        <span class="glyphicon glyphicon-log-out"></span> Logout</a>
-      </span>
-      <a class="btn btn-info btn-lg btn-block" ng-hide="auth.user" ng-click="auth.$login('google')">
-	<span class="glyphicon glyphicon-envelope"></span> Log in with Gmail</a>
-    </div>
-      <div ng-show="auth.user">
-    <p class="bg-info velocity-opposites-transition-slideLeftIn" data-velocity-opts="{ stagger: 150 }" ng-repeat="message in messages">
-      <img ng-src="{{message.from.thirdPartyUserData.picture}}" width="30" height="30"/><b>{{message.from.displayName}}</b> says:   {{message.content}}
-    </p>
-    <br/>
-    <form ng-submit="addMessage()">
-      <div class="form-group">
-    	<label class="sr-only" for="message">Write your message</label>
-      	<input ng-model="message" id="message" class="form-control input-block" placeholder="Write your message"/>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="container">
+      <div class="nav-wrapper"><a id="logo-container" href="#" class="brand-logo">Logo</a>
+        <ul class="right">
+          <li><a href="#">Navbar Link</a></li>
+        </ul>
+
+        <ul id="nav-mobile" class="side-nav">
+          <li><a href="#">Navbar Link</a></li>
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
       </div>
-      <button type="submit" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-send"></span> Send</button>
-    </form>
+    </div>
+  </nav>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">Starter Template</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+      </div>
+      <div class="row center">
+        <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
+      </div>
+      <br><br>
+
     </div>
   </div>
-</div>
-<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular-animate.min.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/velocity/0.7.0/jquery.velocity.min.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/velocity/0.7.0/velocity.ui.min.js"></script>
-<script src="js/angular-velocity.min.js"></script>
 
-<script src="https://cdn.firebase.com/js/client/1.0.18/firebase.js"></script>
-<script src="https://cdn.firebase.com/js/simple-login/1.6.2/firebase-simple-login.js"></script>
-<script src="https://cdn.firebase.com/libs/angularfire/0.7.1/angularfire.min.js"></script>
 
-<script type="text/javascript">
-	var app = angular.module("myChatRoom", ["firebase",'angular-velocity']);
-	
-	app.factory("ChatService", ["$firebase", function($firebase) {
-	  var ref = new Firebase("https://welfare.firebaseio.com/chat");
-	  return $firebase(ref.limit(10));
-	}]);
-	
-	app.controller("ChatCtrl", ["$scope", "ChatService", "$firebaseSimpleLogin",
-	  function($scope, chatService, $firebaseSimpleLogin) {
-	  	var ref = new Firebase("https://welfare.firebaseio.com/");
-	    $scope.auth = $firebaseSimpleLogin(ref);
-	    $scope.messages = chatService;
-	    $scope.addMessage = function() {
-	      $scope.messages.$add({from: $scope.auth.user, content: $scope.message});
-	      $scope.message = "";
-	    };
-	  }
-	]);
-</script>
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="mdi-image-flash-on"></i></h2>
+            <h5 class="center">Speeds up development</h5>
+
+            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="mdi-social-group"></i></h2>
+            <h5 class="center">User Experience Focused</h5>
+
+            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="mdi-action-settings"></i></h2>
+            <h5 class="center">Easy to work with</h5>
+
+            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <br><br>
+
+    <div class="section">
+
+    </div>
+  </div>
+
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.1/js/materialize.min.js"></script>
+  <script src="js/init.js"></script>
+
 </body>
 </html>
