@@ -1,0 +1,66 @@
+  <!doctype html>
+  <html ng-app>
+    <head>
+      <title>Praveen Gandhi - CHMOD Calculator</title>
+      <link rel="shortcut icon" href="img/stvd.png">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css">
+    </head>
+    <body>
+    <nav class="light-blue lighten-1" role="navigation">
+    <div class="container">
+      <div class="nav-wrapper"><a id="logo-container" href="#" class="brand-logo"><img src="img/stvd.png"></a>
+        <ul class="right">
+          <li><a href="#">Home</a></li>
+        </ul>
+
+        <ul id="nav-mobile" class="side-nav">
+          <li><a href="#"></a></li>
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+      </div>
+    </div>
+  </nav>
+  </div>
+      <div class="container">
+        <form name="chmod" action="#">
+          <table class="bordered striped">
+            <tbody><tr>
+              <td colspan="4"><b>CHMOD Calculator</b></td>
+            </tr>
+            <tr>
+              <td><b>Permission</b></td>
+              <td><b>Owner</b></td>
+              <td><b>Group</b></td>
+              <td><b>Other</b></td>
+            </tr>
+            <tr>
+              <td><b>Read</b> (4)</td>
+              <td><input type="checkbox" id="R_O" ng-model="R_O" ng-true-value="4" ng-false-value="0" /><label for="R_O"></label></td>
+              <td><input type="checkbox" id="R_G" ng-model="R_G" ng-true-value="4" ng-false-value="0" /><label for="R_G"></label></td>
+              <td><input type="checkbox" id="R_OT" ng-model="R_OT" ng-true-value="4" ng-false-value="0" /><label for="R_OT"></label></td>
+            </tr>
+            <tr>
+              <td><b>Write</b> (2)</td>
+              <td><input type="checkbox" id="W_O" ng-model="W_O" ng-true-value="2" ng-false-value="0" /><label for="W_O"></label></td>
+              <td><input type="checkbox" id="W_G" ng-model="W_G" ng-true-value="2" ng-false-value="0" /><label for="W_G"></label></td>
+              <td><input type="checkbox" id="W_OT" ng-model="W_OT" ng-true-value="2" ng-false-value="0" /><label for="W_OT"></label></td>
+            </tr>
+            <tr>
+              <td><b>Execute</b> (1)</td>
+              <td><input type="checkbox" id="E_O" ng-model="E_O" ng-true-value="1" ng-false-value="0" /><label for="E_O"></label></td>
+              <td><input type="checkbox" id="E_G" ng-model="E_G" ng-true-value="1" ng-false-value="0" /><label for="E_G"></label></td>
+              <td><input type="checkbox" id="E_OT" ng-model="E_OT" ng-true-value="1" ng-false-value="0" /><label for="E_OT"></label></td>
+            </tr>
+            <tr>
+              <td><b>Value</b></td>
+              <td><input type="text" name="t_owner" value="{{R_O+W_O+E_O}}" size="1" readonly></td>
+              <td><input type="text" name="t_group" value="{{R_G+W_G+E_G}}" size="1" readonly></td>
+              <td><input type="text" name="t_other" value="{{R_OT+W_OT+E_OT}}" size="1" readonly></td>
+            </tr>
+          </tbody></table>
+        </form>
+      </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    </body>
+  </html>
