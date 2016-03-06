@@ -117,16 +117,17 @@
   <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.1/js/materialize.min.js"></script>
   <script src="js/init.js"></script>
-<script type="text/javascript">
-  var isAndroid = /android/i.test(navigator.userAgent.toLowerCase());
-  if (isAndroid)
-  {
-    //alert('android');
-    window.location='market://details?id=com.chrysler.vehicleinfo.jeep';
-  }
-  else{
-    alert('other device');
-  }
-</script>
+  <script type="text/javascript">
+    alert(navigator.userAgent.toLowerCase());
+    var isAndroid = /android/i.test(navigator.userAgent.toLowerCase());
+    if (isAndroid)
+    {
+      //alert('android');
+      window.location='market://details?id=com.chrysler.vehicleinfo.jeep';
+    }
+    else{
+      alert('other device');
+    }
+  </script>
 </body>
 </html>
