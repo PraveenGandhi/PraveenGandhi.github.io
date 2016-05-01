@@ -1,0 +1,66 @@
+<html ng-app="myChatRoom">
+  <head>
+    <title>Chat</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="img/stvd.png">
+  </head>
+  <body>
+  <div class="container">
+  <div ng-controller="ChatCtrl">
+    <div id="login">
+      <span ng-show="auth.user">
+        <img ng-src="{{auth.user.thirdPartyUserData.picture}}" width="40" height="40"/>
+        Hello {{auth.user.displayName}}...! | <a href="#" ng-click="auth.$logout()" class="btn btn-default">
+        <span class="glyphicon glyphicon-log-out"></span> Logout</a>
+      </span>
+      <a class="btn btn-info btn-lg btn-block" ng-hide="auth.user" ng-click="auth.$login('google')">
+	<span class="glyphicon glyphicon-envelope"></span> Log in with Gmail</a>
+    </div>
+      <div ng-show="auth.user">
+    <p class="bg-info velocity-opposites-transition-slideLeftIn" data-velocity-opts="{ stagger: 150 }" ng-repeat="message in messages">
+      <img ng-src="{{message.from.thirdPartyUserData.picture}}" width="30" height="30"/><b>{{message.from.displayName}}</b> says:   {{message.content}}
+    </p>
+    <br/>
+    <form ng-submit="addMessage()">
+      <div class="form-group">
+    	<label class="sr-only" for="message">Write your message</label>
+      	<input ng-model="message" id="message" class="form-control input-block" placeholder="Write your message"/>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-send"></span> Send</button>
+    </form>
+    </div>
+  </div>
+</div>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular-animate.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/velocity/0.7.0/jquery.velocity.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/velocity/0.7.0/velocity.ui.min.js"></script>
+<script src="js/angular-velocity.min.js"></script>
+
+<script src="https://cdn.firebase.com/js/client/1.0.18/firebase.js"></script>
+<script src="https://cdn.firebase.com/js/simple-login/1.6.2/firebase-simple-login.js"></script>
+<script src="https://cdn.firebase.com/libs/angularfire/0.7.1/angularfire.min.js"></script>
+
+<script type="text/javascript">
+	var app = angular.module("myChatRoom", ["firebase",'angular-velocity']);
+	
+	app.factory("ChatService", ["$firebase", function($firebase) {
+	  var ref = new Firebase("https://welfare.firebaseio.com/chat");
+	  return $firebase(ref.limit(10));
+	}]);
+	
+	app.controller("ChatCtrl", ["$scope", "ChatService", "$firebaseSimpleLogin",
+	  function($scope, chatService, $firebaseSimpleLogin) {
+	  	var ref = new Firebase("https://welfare.firebaseio.com/");
+	    $scope.auth = $firebaseSimpleLogin(ref);
+	    $scope.messages = chatService;
+	    $scope.addMessage = function() {
+	      $scope.messages.$add({from: $scope.auth.user, content: $scope.message});
+	      $scope.message = "";
+	    };
+	  }
+	]);
+</script>
+</body>
+</html>
