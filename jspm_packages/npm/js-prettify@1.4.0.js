@@ -1,0 +1,1 @@
+module.exports = require("npm:js-prettify@1.4.0/js/index");

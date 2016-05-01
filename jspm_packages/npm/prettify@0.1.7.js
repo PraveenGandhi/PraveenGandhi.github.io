@@ -1,0 +1,1 @@
+module.exports = require("npm:prettify@0.1.7/prettify");

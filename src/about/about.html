@@ -1,0 +1,30 @@
+<template>
+  <require from="../contact-button"></require>
+  <section class="container">
+    <md-card>
+      <div>
+        <div class="row">
+            <div class="col s12 m4">
+              <md-card md-title="Praveen Gandhi P">
+              <div>
+                <md-card md-image="images/PraveenGandhi.jpg">
+                  <div>
+                    I am a versatile Java JEE developer. I am good at leaning, teaching and programming.
+                  </div>
+                </md-card>
+              </div>
+            </md-card>
+          </div>
+          <div class="col s12 m8">
+            <md-card md-title="Contact Details" md-size.bind="small">
+              <div>
+                <contact-button icon="local_phone" value.bind="phone"></contact-button>
+                <contact-button icon="mail" value.bind="email"></contact-button>
+              </div>
+            </md-card>
+          </div>
+        </div>
+      </div>
+    </md-card>
+  </section>
+</template>

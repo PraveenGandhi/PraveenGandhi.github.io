@@ -1,0 +1,1 @@
+module.exports = require("github:rstacruz/nprogress@0.2.0/nprogress.js");
