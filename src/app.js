@@ -6,7 +6,8 @@ export class App {
     config.title = 'Praveen Gandhi P';
 
     config.map([
-      { name: 'about',            route: ['', 'about'],                moduleId: 'about/about',                 title: 'About' }
+      { name: 'about',  route: ['', 'about'], moduleId: 'about/about',  title: 'About' },
+      { name: 'chmod',  route: 'chmod',       moduleId: 'chmod',        title: 'CHMOD Calculator' }
     ]);
 
     this.router = router;
