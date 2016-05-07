@@ -9,7 +9,7 @@ export function configure(aurelia) {
         .useFooter()
         .useNavbar()
         .useProgress()
-        
+        .useCheckbox()
         .useSidenav();
     });
 
