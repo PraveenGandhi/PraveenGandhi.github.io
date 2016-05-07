@@ -3,44 +3,14 @@ export function configure(aurelia) {
     .standardConfiguration()
     .developmentLogging()
     .plugin('aurelia-materialize-bridge', plugin => {
-      plugin.useClickCounter()
-        .useBadge()
-        .useBreadcrumbs()
-        .useBox()
-        .useButton()
+      plugin
         .useCard()
-        .useCarousel()
-        .useCharacterCounter()
-        .useCheckbox()
-        .useChip()
-        .useCollapsible()
-        .useCollection()
-        .useColors()
-        .useDatePicker()
-        .useDropdown()
-        .useFab()
-        .useFile()
+        
         .useFooter()
-        .useInput()
-        .useModal()
         .useNavbar()
-        .usePagination()
-        .useParallax()
         .useProgress()
-        .usePushpin()
-        .useRadio()
-        .useRange()
-        .useScrollfire()
-        .useScrollSpy()
-        .useSelect()
-        .useSidenav()
-        .useSlider()
-        .useSwitch()
-        .useTabs()
-        .useTooltip()
-        .useTransitions()
-        .useWaves()
-        .useWell();
+        
+        .useSidenav();
     });
 
   aurelia.use.globalResources('shared/collapse-panel');
