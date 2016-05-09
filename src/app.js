@@ -7,7 +7,8 @@ export class App {
 
     config.map([
       { name: 'about',  route: ['', 'about'], moduleId: 'about/about',  title: 'About' },
-      { name: 'chmod',  route: 'chmod',       moduleId: 'chmod',        title: 'CHMOD Calculator' }
+      { name: 'chmod',  route: 'chmod',       moduleId: 'chmod/chmod',  title: 'CHMOD Calculator' },
+      { name: 'works',  route: 'works',       moduleId: 'works/works',  title: 'Works' }
     ]);
 
     this.router = router;

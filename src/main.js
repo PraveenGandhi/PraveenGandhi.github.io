@@ -2,6 +2,7 @@ export function configure(aurelia) {
   aurelia.use
     .standardConfiguration()
     .developmentLogging()
+    .plugin('aurelia-animator-css')
     .plugin('aurelia-materialize-bridge', plugin => {
       plugin
         .useCard()
@@ -12,12 +13,6 @@ export function configure(aurelia) {
         .useCheckbox()
         .useSidenav();
     });
-
-  aurelia.use.globalResources('shared/collapse-panel');
-  aurelia.use.globalResources('shared/markdown');
-  aurelia.use.globalResources('shared/logger');
-  aurelia.use.globalResources('shared/au-code');
-  aurelia.use.globalResources('shared/sampleValueConverters');
 
   aurelia.start()
     .then(au => au.setRoot('app'));
