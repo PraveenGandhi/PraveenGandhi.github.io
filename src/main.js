@@ -1,19 +1,23 @@
+
 export function configure(aurelia) {
   aurelia.use
     .standardConfiguration()
-    .developmentLogging()
-    .plugin('aurelia-animator-css')
-    .plugin('aurelia-materialize-bridge', plugin => {
-      plugin
-        .useCard()
+    //.developmentLogging()
+    // Install and configure the plugin
+  	.plugin('aurelia-materialize-bridge', bridge => bridge.useCard()
         
         .useFooter()
         .useNavbar()
         .useProgress()
         .useCheckbox()
-        .useSidenav();
-    });
+        .useSidenav());
 
-  aurelia.start()
-    .then(au => au.setRoot('app'));
+  //Uncomment the line below to enable animation.
+  aurelia.use.plugin('aurelia-animator-css');
+  //if the css animator is enabled, add swap-order="after" to all router-view elements
+
+  //Anyone wanting to use HTMLImports to load views, will need to install the following plugin.
+  //aurelia.use.plugin('aurelia-html-import-template-loader')
+
+  aurelia.start().then(() => aurelia.setRoot());
 }

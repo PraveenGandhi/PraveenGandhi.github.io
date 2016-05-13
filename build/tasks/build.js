@@ -36,7 +36,7 @@ gulp.task('build-css', function() {
   return gulp.src(paths.css)
     .pipe(changed(paths.output, {extension: '.css'}))
     .pipe(gulp.dest(paths.output))
-	  .pipe(browserSync.stream());
+    .pipe(browserSync.stream());
 });
 
 // this task calls the clean task (located
