@@ -173,3 +173,6 @@ contact-button.is-active .content-container {
     visibility: visible;
 }
 
+.mdi-navigation-menu{
+  cursor:pointer;
+}
