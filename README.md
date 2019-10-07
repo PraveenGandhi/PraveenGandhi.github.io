@@ -1,3 +1,3 @@
 # Praveen Gandhi
 
-[(練習アプリ) Renshuu App](./renshuu-firebase)
+[(練習アプリ) Renshuu App](./renshuu)
