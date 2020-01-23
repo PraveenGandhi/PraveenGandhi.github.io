@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Spring Framework - Workshop</title>
+    <link href="content/css/impress-demo.css" rel="stylesheet" />
+    <link href="content/css/bootstrap.css" rel="stylesheet">
+    <link href="content/css/animate.css" rel="stylesheet">
+    <link rel="shortcut icon" href="content/img/favicon.png" />
+    <style>
+        .slide1 h1 {
+            margin-top: 350px;
+            font-size: 4em;
+        }
+
+        .slide2 ol {
+            margin-left: 80px;
+            font-size: 1.86em;
+            line-height: 1.6em;
+        }
+
+        .abstraction ol {
+            margin-left: 30px;
+            font-size: 1.2em;
+            line-height: 1.2em;
+        }
+
+        .abstraction ol li {
+            margin-top: 15px;
+        }
+
+        .programming {
+            font-size: 17px;
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        .spring ol {
+            margin-left: 30px;
+            font-size: 1.2em;
+            line-height: 1.2em;
+        }
+
+        .spring ol li {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body class="impress-not-supported">
+    <div class="fallback-message">
+        <p>
+            Your browser <b>doesn't support the features required</b>
+            by impress.js, so you are presented with a simplified
+            version of this presentation.
+        </p>
+        <p>For the best experience please use the latest <b>Chrome</b>,
+            <b>Safari</b> or <b>Firefox</b> browser.</p>
+    </div>
+
+    <div id="impress">
+
+        <div id="overview" class="step" data-x="3600" data-y="300" data-scale="20">
+        </div>
+
+        <div class="step slide" data-x="0">
+            <img src="content/img/spring-framework.png" alt="spring" height="70%" width="100%">
+            <blockquote class="alert-success">
+                <h1>Workshop</h1>
+                <h2><span class="glyphicon glyphicon-user"></span> Praveen Gandhi P</h2>
+                <ul class="list-unstyled">
+                    <li class="success">Technical Lead</li>
+                    <li class="info">JK Technosoft.</li>
+                </ul>
+            </blockquote>
+        </div>
+
+        <div class="step slide slide2" data-x="1200">
+            <blockquote class="alert-success">
+                <h1><span class="glyphicon glyphicon-list"></span> Agenda</h1>
+            </blockquote>
+            <ol>
+                <li>About Learning Process</li>
+                <li>Abstraction in general and in specific to Programming</li>
+                <li>Spring Framework overview</li>
+                <li>Spring Goals/Objectives to make Java Enterprise development simple</li>
+                <li>Spring Framework Modules</li>
+                <li>Spring Boot overview</li>
+                <li>Simple Example applications Walk through</li>
+                <li>Live coding sessions</li>
+                <li>Little info about Real world Spring applications</li>
+                <li>Q&A, Feedback</li>
+            </ol>
+        </div>
+
+        <div class="step slide" data-x="2400">
+            <blockquote class="alert-success">
+                <h1>Why should we learn?<b></b></h1>
+            </blockquote>
+            <h1 style="margin-top: 100px; font-size: 6em;text-align: center;">
+                An investment in knowledge pays the best interest.
+            </h1>
+            <h1 style="text-align: right;">- Benjamin Franklin</h1>
+        </div>
+
+        <div class="step slide" data-x="3600">
+            <blockquote class="alert-success">
+                <h1>How should I help you learn?<b></b></h1>
+            </blockquote>
+            <h1 style="margin-top: 100px; font-size: 5em;text-align: center;">
+                Tell me and I forget.
+            </h1>
+            <h1 style="font-size: 5em;text-align: center;">
+                Teach me and I remember.
+            </h1>
+            <h1 style="font-size: 5em;text-align: center;">
+                Involve me and I learn.
+            </h1>
+            <h1 style="text-align: right;">- Benjamin Franklin</h1>
+        </div>
+
+        <div class="step slide abstraction" data-x="4800">
+            <blockquote class="alert-success">
+                <h1>What’s in an abstraction?<b></b></h1>
+            </blockquote>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 style="text-align: justify;">The concept of an abstraction is simple.</h3>
+                    <h3 style="text-align: justify;">You take complicated stuff,
+                        simplify it, isolate it, build a human-friendly, generic interface around it,
+                        name it something cool, and reference it elsewhere.</h3>
+                    <h3><b>Real-world examples of abstractions:</b></h3>
+                    <ol>
+                        <li>When you multiply X and Y, do you think about summing Y sets of X? Nope. That’s why
+                            multiplication exists, right?
+                        </li>
+                        <li>When we charge a customer at Segment, do we think about how that money gets from their bank
+                            to ours? Nope. Our friend, Stripe, does.
+                        </li>
+                        <li>When you buy something on Amazon, do you think about how it ends up at your door in 2 days?
+                            Nope. Their friend, UPS, does.
+                        </li>
+                    </ol>
+                    <p>Reference:
+                        <a href="https://hackernoon.com/why-i-love-programming-c0985e261b4f">
+                            why-i-love-programming
+                        </a>
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <blockquote class="alert-success programming">
+                        Programming is both the art and science of crafting better abstractions.
+                    </blockquote>
+                    <img src="content/img/abstraction.png" alt=""
+                        style="display: block; margin-left: auto; margin-right: auto">
+                </div>
+            </div>
+        </div>
+
+        <div class="step slide spring" data-x="6000">
+            <blockquote class="alert-success">
+                <h1>Spring Framework<b></b></h1>
+            </blockquote>
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>Spring is all about making simple things easy hard things possible.</h1>
+                    <ol>
+                        <li>Make JEE easy to use.</li>
+                        <li>Make common tasks easier</li>
+                        <li>Promote best practices</li>
+                        <li>Easy integration other frameworks</li>
+                        <li>Spring has powerful abstractions to JavaEE Specifications, like JDBC, JTA, etc.</li>
+                        <li class="spring-mvc">Spring MVC for developing robust and maintainable web application in a
+                            simplified approach</li>
+                    </ol>
+                </div>
+                <div class="col-md-6">
+                    <img class="spring-pojo" src="content/img/spring.png" alt="">
+                    <img class="spring-mvc" src="content/img/spring-mvc-flow.png" alt="" width="100%" height="100%">
+                </div>
+            </div>
+        </div>
+
+        <div class="step slide" data-x="7200">
+            <blockquote class="alert-success">
+                <h1>Workshop in action</h1>
+            </blockquote>
+            <pre style="margin-top: 160px; font-size: 3.4em; color:green">
+students.forEach((student) -> {
+    praveen.highFive(student);
+});</pre>
+        </div>
+    </div>
+
+    <script src="content/js/impress.js"></script>
+    <script src="content/js/jquery.js"></script>
+    <script>
+        impress().init();
+        $(function () {
+            $('img.spring-mvc').fadeOut();
+            $('#showDoIt').mouseover(function () {
+                $('#letsdoit').removeClass('hide');
+            });
+            $('.spring-mvc').mouseenter(function () {
+                $('img.spring-pojo').fadeOut(200, function () {
+                    $('img.spring-mvc').fadeIn(200);
+                });
+            }).mouseleave(function () {
+                $('img.spring-mvc').fadeOut(200, function () {
+                    $('img.spring-pojo').fadeIn(200);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
