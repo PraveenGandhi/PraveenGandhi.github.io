@@ -1,0 +1,15 @@
+td {
+    font-size: 2em;
+}
+
+tr {
+    height: 150px;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #d5d6d8;
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+    background-color: #e6e7e9;
+}
