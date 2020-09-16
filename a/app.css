@@ -13,3 +13,10 @@ tr {
 .table-striped tbody tr:nth-of-type(even) {
     background-color: #e6e7e9;
 }
+
+.btn-au, .btn-au:hover, .btn-au:active {
+    color: #fff;
+    font-size: 2em;
+    padding: 1em;
+    background-color: #808285;
+}
