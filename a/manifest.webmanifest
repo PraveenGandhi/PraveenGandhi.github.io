@@ -1,0 +1,13 @@
+{
+    "background_color": "purple",
+    "description": "Au app",
+    "display": "fullscreen",
+    "icons": [{
+        "src": "icon/fox-icon.png",
+        "sizes": "192x192",
+        "type": "image/png"
+    }],
+    "name": "Awesome au app",
+    "short_name": "AU",
+    "start_url": "index.html"
+}
