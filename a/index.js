@@ -102,6 +102,9 @@
         items.forEach(makeElement);
     };
 
+    window.onbeforeunload = function () {
+        return "Are you sure?";
+    }
     if (appState !== 'stared') {
         messageElement.classList.remove('d-none');
         beginButton.addEventListener('click', begin);
@@ -109,7 +112,5 @@
     }
 
     startApp();
-    window.onbeforeunload = function () {
-        return "Are you sure?";
-    }
+    
 })();
